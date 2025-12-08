@@ -146,58 +146,58 @@ class SqlConnect {
                 <td><button name="F9" method="post">F9</button></td>
                 <td><button name="F10" method="post">F10</button></td>
             </tr>
-            <!--Je fais jusqu'à F -->
             <tr>
                 <th scope="row">G</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><button name="G1" method="post">G1</td>
+                <td><button name="G2" method="post">G2</td>
+                <td><button name="G3" method="post">G3</td>
+                <td><button name="G4" method="post">G4</td>
+                <td><button name="G5" method="post">G5</td>
+                <td><button name="G6" method="post">G6</td>
+                <td><button name="G7" method="post">G7</td>
+                <td><button name="G8" method="post">G8</td>
+                <td><button name="G9" method="post">G9</td>
+                <td><button name="G10" method="post">G10</td>
             </tr>
             <tr>
                 <th scope="row">H</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><button name="H1" method="post">H1</td>
+                <td><button name="H2" method="post">H2</td>
+                <td><button name="H3" method="post">H3</td>
+                <td><button name="H4" method="post">H4</td>
+                <td><button name="H5" method="post">H5</td>
+                <td><button name="H6" method="post">H6</td>
+                <td><button name="H7" method="post">H7</td>
+                <td><button name="H8" method="post">H8</td>
+                <td><button name="H9" method="post">H9</td>
+                <td><button name="H10" method="post">H10</td>
             </tr>
+
             <tr>
                 <th scope="row">I</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><button name="I1" method="post">I1</td>
+                <td><button name="I2" method="post">I2</td>
+                <td><button name="I3" method="post">I3</td>
+                <td><button name="I4" method="post">I4</td>
+                <td><button name="I5" method="post">I5</td>
+                <td><button name="I6" method="post">I6</td>
+                <td><button name="I7" method="post">I7</td>
+                <td><button name="I8" method="post">I8</td>
+                <td><button name="I9" method="post">I9</td>
+                <td><button name="I10" method="post">I10</td>
             </tr>
             <tr>
                 <th scope="row">J</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><button name="J1" method="post">J1</td>
+                <td><button name="J2" method="post">J2</td>
+                <td><button name="J3" method="post">J3</td>
+                <td><button name="J4" method="post">J4</td>
+                <td><button name="J5" method="post">J5</td>
+                <td><button name="J6" method="post">J6</td>
+                <td><button name="J7" method="post">J7</td>
+                <td><button name="J8" method="post">J8</td>
+                <td><button name="J9" method="post">J9</td>
+                <td><button name="J10" method="post">J10</td>
             </tr>
         </table>
     </main>
