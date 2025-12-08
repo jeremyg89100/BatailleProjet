@@ -30,14 +30,14 @@ if (isset($_POST["joueur1"])) {
         $_SESSION["role"] = "Joueur 1";
         save_state($fichier, $etat);
     }
+    elseif ($etat["j1"] == $etat["j2"]) {
+    $etat["j1"] = null;
+    die();
+  }
 }
 
-if (isset($_POST["joueur2"])) {
-    if ($etat["j2"] === null) {
-        $etat["j2"] = session_id();
-        $_SESSION["role"] = "Joueur 2";
-        save_state($fichier, $etat);
-    }
+elseif ($etat["j1"] == $etat["j2"]) {
+  $etat["j1"] = null;
 }
 
 // Détection automatique du rôle (si déjà assigné avant refresh)
