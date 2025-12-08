@@ -96,55 +96,55 @@ class SqlConnect {
             </tr>
             <tr>
                 <th scope="row">C</th>
-                <td><button name="" method="post">C1</button></td>
-                <td><button name="" method="post">C2</button></td>
-                <td><button name="" method="post">C3</button></td>
-                <td><button name="" method="post">C4</button></td>
-                <td><button name="" method="post">C5</button></td>
-                <td><button name="" method="post">C6</button></td>
-                <td><button name="" method="post">C7</button></td>
-                <td><button name="" method="post">C8</button></td>
-                <td><button name="" method="post">C9</button></td>
-                <td><button name="" method="post">C10</button></td>
+                <td><button name="C1" method="post">C1</button></td>
+                <td><button name="C2" method="post">C2</button></td>
+                <td><button name="C3" method="post">C3</button></td>
+                <td><button name="C4" method="post">C4</button></td>
+                <td><button name="C5" method="post">C5</button></td>
+                <td><button name="C6" method="post">C6</button></td>
+                <td><button name="C7" method="post">C7</button></td>
+                <td><button name="C8" method="post">C8</button></td>
+                <td><button name="C9" method="post">C9</button></td>
+                <td><button name="C10" method="post">C10</button></td>
             </tr>
             <tr>
                 <th scope="row">D</th>
-                <td><button name="" method="post">D1</button></td>
-                <td><button name="" method="post">D2</button></td>
-                <td><button name="" method="post">D3</button></td>
-                <td><button name="" method="post">D4</button></td>
-                <td><button name="" method="post">D5</button></td>
-                <td><button name="" method="post">D6</button></td>
-                <td><button name="" method="post">D7</button></td>
-                <td><button name="" method="post">D8</button></td>
-                <td><button name="" method="post">D9</button></td>
-                <td><button name="" method="post">D10</button></td>
+                <td><button name="D1" method="post">D1</button></td>
+                <td><button name="D2" method="post">D2</button></td>
+                <td><button name="D3" method="post">D3</button></td>
+                <td><button name="D4" method="post">D4</button></td>
+                <td><button name="D5" method="post">D5</button></td>
+                <td><button name="D6" method="post">D6</button></td>
+                <td><button name="D7" method="post">D7</button></td>
+                <td><button name="D8" method="post">D8</button></td>
+                <td><button name="D9" method="post">D9</button></td>
+                <td><button name="D10" method="post">D10</button></td>
             </tr>
             <tr>
                 <th scope="row">E</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><button name="E1" method="post">E1</button></td>
+                <td><button name="E2" method="post">E2</button></td>
+                <td><button name="E3" method="post">E3</button></td>
+                <td><button name="E4" method="post">E4</button></td>
+                <td><button name="E5" method="post">E5</button></td>
+                <td><button name="E6" method="post">E6</button></td>
+                <td><button name="E7" method="post">E7</button></td>
+                <td><button name="E8" method="post">E8</button></td>
+                <td><button name="E9" method="post">E9</button></td>
+                <td><button name="E10" method="post">E10</button></td>
             </tr>
             <tr>
                 <th scope="row">F</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><button name="F1" method="post">F1</button></td>
+                <td><button name="F2" method="post">F2</button></td>
+                <td><button name="F3" method="post">F3</button></td>
+                <td><button name="F4" method="post">F4</button></td>
+                <td><button name="F5" method="post">F5</button></td>
+                <td><button name="F6" method="post">F6</button></td>
+                <td><button name="F7" method="post">F7</button></td>
+                <td><button name="F8" method="post">F8</button></td>
+                <td><button name="F9" method="post">F9</button></td>
+                <td><button name="F10" method="post">F10</button></td>
             </tr>
             <!--Je fais jusqu'à F -->
             <tr>
