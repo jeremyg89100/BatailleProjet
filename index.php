@@ -70,55 +70,55 @@ class SqlConnect {
             </tr>
             <tr>
                 <th scope="row">A</th>
-                <td><?php ?></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><button name="A1" method="post">A1</button></td>
+                <td><button name="A2" method="post">A2</button></td>
+                <td><button name="A3" method="post">A3</button></td>
+                <td><button name="A4" method="post">A4</button></td>
+                <td><button name="A5" method="post">A5</button></td>
+                <td><button name="A6" method="post">A6</button></td>
+                <td><button name="A7" method="post">A7</button></td>
+                <td><button name="A8" method="post">A8</button></td>
+                <td><button name="A9" method="post">A9</button></td>
+                <td><button name="A10" method="post">A10</button></td>
             </tr>
             <tr>
                 <th scope="row">B</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><button name="B1" method="post">B1</button></td>
+                <td><button name="B2" method="post">B2</button></td>
+                <td><button name="B3" method="post">B3</button></td>
+                <td><button name="B4" method="post">B4</button></td>
+                <td><button name="B5" method="post">B5</button></td>
+                <td><button name="B6" method="post">B6</button></td>
+                <td><button name="B7" method="post">B7</button></td>
+                <td><button name="B8" method="post">B8</button></td>
+                <td><button name="B9" method="post">B9</button></td>
+                <td><button name="B10" method="post">B10</button></td>
             </tr>
             <tr>
                 <th scope="row">C</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><button name="" method="post">C1</button></td>
+                <td><button name="" method="post">C2</button></td>
+                <td><button name="" method="post">C3</button></td>
+                <td><button name="" method="post">C4</button></td>
+                <td><button name="" method="post">C5</button></td>
+                <td><button name="" method="post">C6</button></td>
+                <td><button name="" method="post">C7</button></td>
+                <td><button name="" method="post">C8</button></td>
+                <td><button name="" method="post">C9</button></td>
+                <td><button name="" method="post">C10</button></td>
             </tr>
             <tr>
                 <th scope="row">D</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><button name="" method="post">D1</button></td>
+                <td><button name="" method="post">D2</button></td>
+                <td><button name="" method="post">D3</button></td>
+                <td><button name="" method="post">D4</button></td>
+                <td><button name="" method="post">D5</button></td>
+                <td><button name="" method="post">D6</button></td>
+                <td><button name="" method="post">D7</button></td>
+                <td><button name="" method="post">D8</button></td>
+                <td><button name="" method="post">D9</button></td>
+                <td><button name="" method="post">D10</button></td>
             </tr>
             <tr>
                 <th scope="row">E</th>
@@ -146,6 +146,7 @@ class SqlConnect {
                 <td></td>
                 <td></td>
             </tr>
+            <!--Je fais jusqu'à F -->
             <tr>
                 <th scope="row">G</th>
                 <td></td>
