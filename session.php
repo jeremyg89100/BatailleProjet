@@ -1,6 +1,14 @@
 <?php
 session_start();
 
+/* try {
+    $pdo = new PDO("mysql:host=localhost;dbname=bataille_navale", "root", "1234");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    die("Erreur de connexion : " . $e->getMessage());
+} */
+
+
 $fichier = "etat_joueurs.json";
 
 if (!file_exists($fichier)) {
@@ -30,14 +38,20 @@ if (isset($_POST["joueur1"])) {
         $_SESSION["role"] = "Joueur 1";
         save_state($fichier, $etat);
     }
-    elseif ($etat["j1"] == $etat["j2"]) {
-    $etat["j1"] = null;
-    die();
-  }
 }
 
-elseif ($etat["j1"] == $etat["j2"]) {
-  $etat["j1"] = null;
+if (isset($_POST["joueur2"])) {
+    if ($etat["j2"] === null) {
+        $etat["j2"] = session_id();
+        $_SESSION["role"] = "Joueur 2";
+        save_state($fichier, $etat);
+    }
+}
+
+if ($etat["j1"] !== null && $etat["j2"] !== null) {
+    if (isset($_SESSION["role"]) && $_SESSION["role"] !== null) {
+        header('Location: plateau.php');
+    }
 }
 
 // Détection automatique du rôle (si déjà assigné avant refresh)
