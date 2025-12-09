@@ -6,6 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>Joueur 1 / Joueur 2</title>
 </head>
 
@@ -18,10 +19,10 @@
     </p>
 
     <form method="post">
-        <button type="submit" name="joueur1" class="button1"<?= $etat["j1"] !== null ? "disabled" : "" && $etat["j1"] != $etat["j2"]?>>
+        <button type="submit" name="joueur1" class="button1"<?= ($etat["j1"] !== null || $etat["j2"] === session_id()) ? "disabled" : "" ?>>
             🎮 Devenir Joueur 1
         </button>
-        <button type="submit" name="joueur2" class="button2" <?= $etat["j2"] !== null ? "disabled" : "" && $etat["j2"] != $etat["j1"] ?>>
+        <button type="submit" name="joueur2" class="button2" <?= ($etat["j2"] !== null || $etat["j1"] === session_id()) ? "disabled" : "" ?>>
             🎮 Devenir Joueur 2
         </button>
         <button type="submit" name="reset_total">
