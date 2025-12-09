@@ -21,10 +21,12 @@ if (isset($_POST['tir'])) {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Jeu</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -42,7 +44,7 @@ if (isset($_POST['tir'])) {
                 <?php
             $lettres = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
             foreach ($lettres as $lettre):
-        ?>
+            ?>
                 <tr>
                     <th scope="row"><?= $lettre ?></th>
                     <?php for ($i = 1; $i <= 10; $i++): 
@@ -74,6 +76,11 @@ if (isset($_POST['tir'])) {
                 </tr>
                 <?php endforeach; ?>
             </table>
+        </form>
+        <form action="../scripts/reset_total.php" method="post">
+            <button type="submit" name="reset_total">
+                ❌ Fin de partie (RESET)
+            </button>
         </form>
     </main>
 </body>
