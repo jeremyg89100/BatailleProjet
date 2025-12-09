@@ -1,5 +1,4 @@
 <?php
-
     require_once 'Bateau.php';
 
     $torpilleur = new Bateau(1, "torpilleur", 2);

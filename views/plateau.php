@@ -4,7 +4,7 @@ $plateauJ1 = [
     "A2" => 2,  // Torpilleur 
     "C5" => 3,  // Sous-marin 
     "C6" => 3,  // Sous-marin 
-    "C7" => 3   // Sous-marin 
+    "C7" => 3,  // Sous-marin 
 ];
 
 // Tableau pour stocker les tirs
@@ -30,22 +30,22 @@ if (isset($_POST['tir'])) {
 <body>
     <main>
         <form method="post">
-    <table>
-        <caption>Plateau Joueur 1</caption>
-        <tr>
-            <th></th>
-            <?php for ($i = 1; $i <= 10; $i++): ?>
-                <th scope="col"><?= $i ?></th>
-            <?php endfor; ?>
-        </tr>
-        
-        <?php
+            <table>
+                <caption>Plateau joueur 1</caption>
+                <tr>
+                    <th></th>
+                    <?php for ($i = 1; $i <= 10; $i++): ?>
+                    <th scope="col"><?= $i ?></th>
+                    <?php endfor; ?>
+                </tr>
+
+                <?php
             $lettres = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
             foreach ($lettres as $lettre):
         ?>
-        <tr>
-            <th scope="row"><?= $lettre ?></th>
-            <?php for ($i = 1; $i <= 10; $i++): 
+                <tr>
+                    <th scope="row"><?= $lettre ?></th>
+                    <?php for ($i = 1; $i <= 10; $i++): 
                 $position = $lettre . $i;
                 $boat = isset($plateauJ1[$position]); 
                 $isShot = in_array($position, $shot); 
@@ -64,16 +64,17 @@ if (isset($_POST['tir'])) {
                     $texte = "";
                 }
             ?>
-            <td>
-                <button class="buttonPlateau" type="submit" name="tir" value="<?= $position ?>" class="<?= $classe ?>">
-                    <?= $texte ?>
-                </button>
-            </td>
-            <?php endfor; ?>
-        </tr>
-        <?php endforeach; ?>
-    </table>
-</form>
+                    <td>
+                        <button class="buttonPlateau" type="submit" name="tir" value="<?= $position ?>"
+                            class="<?= $classe ?>">
+                            <?= $texte ?>
+                        </button>
+                    </td>
+                    <?php endfor; ?>
+                </tr>
+                <?php endforeach; ?>
+            </table>
+        </form>
     </main>
 </body>
 

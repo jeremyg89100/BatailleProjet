@@ -1,14 +1,6 @@
 <?php
 session_start();
 
-/* try {
-    $pdo = new PDO("mysql:host=localhost;dbname=bataille_navale", "root", "1234");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    die("Erreur de connexion : " . $e->getMessage());
-} */
-
-
 $fichier = "etat_joueurs.json";
 
 if (!file_exists($fichier)) {
@@ -17,19 +9,10 @@ if (!file_exists($fichier)) {
 
 $etat = json_decode(file_get_contents($fichier), true);
 
-function save_state($file, $data) {
-  file_put_contents($file, json_encode($data));
-}
-
-if (isset($_POST["reset_total"])) {
-  $etat = ["j1" => null, "j2" => null];
-  save_state($GLOBALS['fichier'], $etat);
-
-  session_unset();
-  session_destroy();
-
-  header("Location: index.php");
-  exit;
+if (!function_exists('save_state')) {
+    function save_state($file, $data) {
+        file_put_contents($file, json_encode($data));
+    }
 }
 
 if (isset($_POST["joueur1"])) {
@@ -50,7 +33,7 @@ if (isset($_POST["joueur2"])) {
 
 if ($etat["j1"] !== null && $etat["j2"] !== null) {
     if (isset($_SESSION["role"]) && $_SESSION["role"] !== null) {
-        header('Location: plateau.php');
+        header('Location: views/plateau.php');
     }
 }
 
