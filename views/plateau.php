@@ -1,21 +1,34 @@
 <?php
-$plateauJ1 = [
-    "A1" => 2,  // Torpilleur 
-    "A2" => 2,  // Torpilleur 
-    "C5" => 3,  // Sous-marin 
-    "C6" => 3,  // Sous-marin 
-    "C7" => 3,  // Sous-marin 
-];
+    include( __DIR__ . '/../scripts/sqlConnect.php');
 
-// Tableau pour stocker les tirs
-$shot = [];
 
-// Simuler des tirs
-if (isset($_POST['tir'])) {
-    $shot[] = $_POST['tir'];
+    $sql = new SqlConnect();   
+    $player = $_SESSION["role"] === 'joueur1' ? 'joueur2' : 'joueur1';
+
+    if (isset($_POST['tir'])) {
+        $tir = $_POST['tir'];
+
+    $updateQuery = 'UPDATE ' . $player . ' SET checked = 1 WHERE idgrid = :position';
+    $updateReq = $sql->db->prepare($updateQuery);
+    $updateReq->execute(['position'=>$tir]);
 }
-?>
+    try {
+        $query = 'SELECT * FROM '. $player;
+        $req = $sql->db->prepare($query);
+        $req->execute();
+        $rows = $req->fetchAll(PDO::FETCH_ASSOC);
 
+        $plateau = [];
+        foreach ($rows as $row) {
+            $plateau[$row['idgrid']] = ['boat' => $row['boat'],
+            'checked' => $row['checked']
+            ];
+        }
+    
+    } catch (Exception $e) {
+        echo "❌ Erreur : " . $e->getMessage() . "<br>";
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,8 +62,8 @@ if (isset($_POST['tir'])) {
                     <th scope="row"><?= $lettre ?></th>
                     <?php for ($i = 1; $i <= 10; $i++): 
                 $position = $lettre . $i;
-                $boat = isset($plateauJ1[$position]); 
-                $isShot = in_array($position, $shot); 
+                $boat = isset($plateau[$position]) && $plateau[$position]['boat'] != null; 
+                $isShot = isset($plateau[$position]) && $plateau[$position]['checked'] == 1; 
                 
                 if ($isShot && $boat) {
                     $classe = "touched";
@@ -59,8 +72,8 @@ if (isset($_POST['tir'])) {
                     $classe = "missed";
                     $texte = "💧";
                 } elseif ($boat) {
-                    $classe = "bateau";
-                    $texte = $plateauJ1[$position]; 
+                    $classe = "";
+                    $texte = "";
                 } else {
                     $classe = "";
                     $texte = "";
@@ -77,8 +90,8 @@ if (isset($_POST['tir'])) {
                 <?php endforeach; ?>
             </table>
         </form>
-        <form action="../scripts/reset_total.php" method="post">
-            <button type="submit" name="reset_total">
+        <form action="/bataille/scripts/reset_total_plateau.php" method="post">
+            <button type="submit" name="reset_total_plateau">
                 ❌ Fin de partie (RESET)
             </button>
         </form>

@@ -7,7 +7,7 @@ function save_state($file, $data) {
 if (isset($_POST["joueur1"])) {
     if ($etat["j1"] === null) {
         $etat["j1"] = session_id();
-        $_SESSION["role"] = "Joueur 1";
+        $_SESSION["role"] = "joueur1";
         save_state("./etat_joueurs.json", $etat);
     }
 }
@@ -15,7 +15,7 @@ if (isset($_POST["joueur1"])) {
 if (isset($_POST["joueur2"])) {
     if ($etat["j2"] === null) {
         $etat["j2"] = session_id();
-        $_SESSION["role"] = "Joueur 2";
+        $_SESSION["role"] = "joueur2";
         save_state("./etat_joueurs.json", $etat);
     }
 }
@@ -42,11 +42,11 @@ $role = $_SESSION["role"] ?? "Aucun rôle";
     </p>
 
     <form method="post">
-        <button type="submit" name="joueur1" class="button1"
+        <button type="submit" name="joueur1" value="joueur1" class="button1"
             <?= ($etat["j1"] !== null || $etat["j2"] === session_id()) ? "disabled" : "" ?>>
             🎮 Devenir Joueur 1
         </button>
-        <button type="submit" name="joueur2" class="button2"
+        <button type="submit" name="joueur2" value="joueur2" class="button2"
             <?= ($etat["j2"] !== null || $etat["j1"] === session_id()) ? "disabled" : "" ?>>
             🎮 Devenir Joueur 2
         </button>
