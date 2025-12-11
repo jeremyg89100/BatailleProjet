@@ -17,7 +17,7 @@ if (isset($_POST["reset_total_plateau"])) {
     $updateQuery = 'UPDATE joueur2 SET checked = 0 , boat = null';
     $updateReq = $sql->db->query($updateQuery);
 
-  $etat = ["j1" => null, "j2" => null];
+  $etat = ["j1" => null, "j2" => null, "tour" => 1];
   save_state("../etat_joueurs.json", $etat);
   
   session_unset();
@@ -26,5 +26,3 @@ if (isset($_POST["reset_total_plateau"])) {
   header("Location: ../index.php");
   exit;
 }
-
-?>
