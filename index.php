@@ -38,9 +38,9 @@ if (isset($_POST["joueur2"])) {
     $MesBateauxCoules = require_once (__DIR__ . '/scripts/MyBoatDestroyed.php');
     $role = $_SESSION["role"] ?? "Aucun rôle";
 
-    if ($etat["j1"] != null && $etat["j2"] != null && isset($_SESSION["role"]) && ($MesBateauxCoules !== 5 || $bateauxCoulesAdverse !== 5)) {
+    if ($etat["j1"] != null && $etat["j2"] != null && isset($_SESSION["role"]) && ($MesBateauxCoules == 5 || $bateauxCoulesAdverse == 5)) {
             include __DIR__ . '/views/choose_boat.php';
-    } else {
+    } elseif ($etat["j1"] == null || $etat["j2"]= null) {
     include 'views/lobby.php';
     }
     if (isset($_SESSION["role"])) {
