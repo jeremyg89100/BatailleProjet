@@ -12,9 +12,9 @@ $sql = new SqlConnect();
 $player = $_SESSION["role"] === 'joueur1' ? 'joueur2' : 'joueur1';
 
 if (isset($_POST["reset_total_plateau"])) {
-    $updateQuery = 'UPDATE joueur1 SET checked = 0 , boat = null';
+    $updateQuery = 'UPDATE joueur1 SET checked = 0 , boat = null , choice = NULL';;
     $updateReq = $sql->db->query($updateQuery);
-    $updateQuery = 'UPDATE joueur2 SET checked = 0 , boat = null';
+    $updateQuery = 'UPDATE joueur2 SET checked = 0 , boat = null , choice = NULL';;
     $updateReq = $sql->db->query($updateQuery);
 
   $etat = ["j1" => null, "j2" => null, "tour" => 1];

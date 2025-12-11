@@ -115,3 +115,8 @@ VALUES
 ('J9'),
 ('J10')
 
+ALTER TABLE joueur1
+ADD COLUMN choice VARCHAR(5);
+
+ALTER TABLE joueur2
+ADD COLUMN choice VARCHAR(5);

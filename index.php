@@ -36,7 +36,7 @@ if (isset($_POST["joueur2"])) {
 $role = $_SESSION["role"] ?? "Aucun rôle";
 
 if ($etat["j1"] != null && $etat["j2"] != null && isset($_SESSION["role"])) {
-    include 'views/plateau.php';
+    include 'views/choose_boat.php';
 
 } else {
     include 'views/lobby.php';
