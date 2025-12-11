@@ -1,5 +1,8 @@
 <?php
 
+    error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
     include __DIR__ . '/../scripts/sqlConnect.php';
 
     $sql = new SqlConnect();   
@@ -51,19 +54,6 @@
 
     $gameOver = (count($MesBateauxCoules) === 5 || count($bateauxCoulesAdverse) === 5);
 
-    //Placing boats before launching the game
-
-    $queryJ1 = 'SELECT COUNT(*) as total FROM joueur1 WHERE boat IS NOT NULL';
-    $reqJ1 = $sql->db->query($queryJ1);
-    $totalJ1 = $reqJ1->fetch(PDO::FETCH_ASSOC)['total'];
-
-    $queryJ2 = 'SELECT COUNT(*) as total FROM joueur2 WHERE boat IS NOT NULL';
-    $reqJ2 = $sql->db->query($queryJ2);
-    $totalJ2 = $reqJ2->fetch(PDO::FETCH_ASSOC)['total'];
-
-    $bateauxPlaces = ($totalJ1 >= 17 && $totalJ2 >= 17);
-
-    $disabled = (!$bateauxPlaces || !$myTurn) ? 'disabled' : '';
 ?>
 
 
@@ -78,19 +68,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
 
-    <?php if (!$myTurn && !$gameOver): ?>
+    <!-- <?php if (!$myTurn && !$gameOver): ?>
         <meta http-equiv="refresh" content="3">
-    <?php endif; ?>
+    <?php endif; ?> -->
 </head>
 
 <body>
     <main>
-        <?php if (!$bateauxPlaces): ?>
-            <div>
-                <h3>Placements des bateaux en cours...</h3>
-            </div>
-        <?php endif; ?>
-    <?php if ($bateauxPlaces && !$gameOver): ?>
+    <?php if ($_SESSION['allPlaced'] && !$gameOver): ?>
         <div>
             <h3><?= $myTurn ? "Mon tour" : "Tour de l'adversaire..." ?></h3>
         </div>

@@ -28,13 +28,13 @@ if (isset($_POST['placed']) && isset($_SESSION['selected_boat'])) {
     $position = $_POST['placed'];
 
     //verifie si la taille du bateau n'a pas été dépassé
-    $query = "SELECT COUNT(*) AS CountSize FROM $player WHERE choice = :boatId";
+    $query = "SELECT COUNT(*) AS CountSize FROM $player WHERE boat = :boatId";
     $req = $sql->db->prepare($query);
     $req->execute(['boatId' => $boatId]);
     $CountSize = $req->fetch()['CountSize'];
 
     if ($CountSize < $boats[$boatId]['size']) {
-        $query = "UPDATE $player SET choice = :boat WHERE idgrid = :position";
+        $query = "UPDATE $player SET boat = :boat WHERE idgrid = :position";
         $req = $sql->db->prepare($query);
         $req->execute(['boat' => $boatId, 'position' => $position]);
     } else {
@@ -51,23 +51,37 @@ $rows = $req->fetchAll(PDO::FETCH_ASSOC);
 $grille = [];
 foreach ($rows as $row) {
     $grille[$row['idgrid']] = [
-        'choice' => $row['choice']
+        'boat' => $row['boat']
     ];
 }
 
 $allPlaced = true;
 //Compte le nombre de bateaux qu'on a placé grâce à leur id
 foreach ($boats as $id => $boat) {
-    $query = "SELECT COUNT(*) AS count FROM $player WHERE choice = :id";
+    $query = "SELECT COUNT(*) AS count FROM $player WHERE boat = :id";
     $req = $sql->db->prepare($query);
     $req->execute(['id'=>$id]);
     $count = $req->fetch()['count'];
 
     if ($count != $boat['size']) {
-        $allPlaced = false;
+        $_SESSION['allPlaced'] = true;
         break;
     }
 }
+
+    //Placing boats before launching the game
+
+    // $queryJ1 = 'SELECT COUNT(*) as total FROM joueur1 WHERE boat IS NOT NULL';
+    // $reqJ1 = $sql->db->query($queryJ1);
+    // $totalJ1 = $reqJ1->fetch(PDO::FETCH_ASSOC)['total'];
+
+    // $queryJ2 = 'SELECT COUNT(*) as total FROM joueur2 WHERE boat IS NOT NULL';
+    // $reqJ2 = $sql->db->query($queryJ2);
+    // $totalJ2 = $reqJ2->fetch(PDO::FETCH_ASSOC)['total'];
+
+    // $_SESSION['bateauxPlaces'] = ($totalJ1 >= 17 && $totalJ2 >= 17);
+
+    // $disabled = (!$bateauxPlaces || !$myTurn) ? 'disabled' : '';
 ?>
 
 <!DOCTYPE html>
@@ -137,7 +151,7 @@ foreach ($boats as $id => $boat) {
                     <th scope="row"><?= $lettre ?></th>
                     <?php for ($i = 1; $i <= 10; $i++): 
                         $position = $lettre . $i;
-                        $BoatExist = isset($grille[$position]) && $grille[$position]['choice'] != null;
+                        $BoatExist = isset($grille[$position]) && $grille[$position]['boat'] != null;
                     ?>
                     <td>
                         <button class="buttonPlateau" type="submit" name="placed" value="<?= $position ?>"
@@ -156,15 +170,15 @@ foreach ($boats as $id => $boat) {
             </table>
             <td>
         </form>
-        <form action="../scripts/reset_total_plateau.php" method="post">
+        <form action="/bataille/scripts/reset_total_plateau.php" method="post">
             <button type="submit" name="reset_total_plateau">
                 ❌ Fin de partie (RESET)
             </button>
         </form>
         <?php if ($allPlaced): ?>
-        <form action="plateau.php" method="post">
-            <button type="submit" class="jouer"> Jouer </button>
-        </form>
+            <form action="index.php" method="post">
+                <button type="submit" name="play"> Jouer </button>
+            </form>
         <?php endif; ?>
 
     </main>
