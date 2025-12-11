@@ -1,5 +1,5 @@
 <?php
-
+if (!class_exists('SqlConnect')) {
 class SqlConnect {
   public object $db;
   private string $host;
@@ -34,6 +34,7 @@ class SqlConnect {
 
     return $dataFormated;
   }
+}
 }
 
 ?>
