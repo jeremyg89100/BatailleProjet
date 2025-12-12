@@ -8,7 +8,7 @@ function save_state($file, $data) {
 $etat = json_decode(file_get_contents($fichier), true);
 
 if (isset($_POST["reset_total"])) {
-  $etat = ["j1" => null, "j2" => null, "tour" => 1];
+  $etat = ["j1" => null, "j2" => null, "tour" => 1, "turn_count" => 1];
   save_state("../etat_joueurs.json", $etat);
   
   session_unset();

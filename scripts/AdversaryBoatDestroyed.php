@@ -1,9 +1,5 @@
 <?php 
 
-if (!isset($_SESSION['role'])) {
-    header('Location: /bataille/index.php');
-    exit;
-}
     require_once 'sqlConnect.php';
     require_once __DIR__ . '/../config/Bateau.php';
 
@@ -37,6 +33,6 @@ $bateauxCoulesAdverse = [];
             ];
         }
     }
-    return $bateauxCoulesAdverse;
+    $_SESSION['bateauxCoulesAdverse'] = $bateauxCoulesAdverse ;
 
 
