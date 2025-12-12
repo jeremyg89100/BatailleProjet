@@ -1,0 +1,62 @@
+body {
+  background-color: black;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 30px;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  color: white;
+}
+h1 {
+  color: green;
+  filter: brightness(2);
+}
+span {
+  text-decoration: none;
+  font-size: 45px;
+}
+.p1 {
+  color: yellow;
+  font-size: 35px;
+}
+.p2 {
+  color: cyan;
+  font-size: 35px;
+}
+button {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 20px;
+  background-color: white;
+}
+.button1:hover {
+  transition: 0.5s;
+  font-weight: bold;
+  border: 2px solid yellow;
+  border-radius: 20px;
+  background-color: yellow;
+}
+
+.button2:hover {
+  transition: 0.5s;
+  font-weight: bold;
+  border: 2px solid cyan;
+  border-radius: 20px;
+  background-color: cyan;
+  filter: brightness(1.5);
+}
+.reset {
+  border-radius: 20px;
+}
+.reset:hover {
+  transition: 0.5s;
+  font-weight: bold;
+  border: 2px solid rgb(2, 248, 2);
+  border-radius: 20px;
+  background-color: rgb(2, 248, 2);
+}

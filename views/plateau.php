@@ -111,7 +111,7 @@ if (isset($_POST['tir']) && $myTurn && $bothPlayersReady) {
             <div class="grilles-container">
                 <div class="grille-placement">
                     <table>
-                        <caption>Plateau joueur 1</caption>
+                        <caption>Coulez les bateaux adverses !!</caption>
                             <tr>
                                 <th></th>
                                 <?php for ($i = 1; $i <= 10; $i++): ?>

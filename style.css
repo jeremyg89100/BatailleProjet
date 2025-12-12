@@ -16,14 +16,12 @@ main {
   margin: 2rem 0;
 }
 
-/* chaque tableau */
 .grille-tir,
 .grille-placement {
-  flex: 1 1 420px; /* 420 px minimum, peuvent grandir */
+  flex: 1 1 420px;
   max-width: 100%;
 }
 
-/* boutons carrés */
 .buttonPlateau {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -47,7 +45,6 @@ main {
   color: #fff;
 }
 
-/* Tables */
 table {
   border-collapse: collapse;
   margin: 0 auto;
@@ -66,7 +63,7 @@ table caption {
   text-align: center;
 }
 
-/* Cellules d'en-tête */
+/* Entete */
 table th {
   padding: 15px;
   background: #34495e;
@@ -77,7 +74,7 @@ table th {
   height: 30px;
 }
 
-/* Cellules du tableau */
+/*  tableau */
 table td {
   padding: 0;
   width: 30px;

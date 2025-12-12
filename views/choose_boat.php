@@ -21,18 +21,21 @@ require_once __DIR__ . '/../scripts/sqlConnect.php';
         $_SESSION['selected_boat'] = $_POST['boat_id'];
     }
 
-    //Enregistre la case du bateau selectionné
+    //Enregistre la case du bateau selectionné et quel bateau tu as choisis
     if (isset($_POST['placed']) && isset($_SESSION['selected_boat'])) {
         //les ids sont enregistrés pour toute la session
         $boatId = $_SESSION['selected_boat'];
         $position = $_POST['placed'];
 
-        //verifie si la taille du bateau n'a pas été dépassé
+        //Ajoute +1 à $CountSize pour chaque placement d'un bateau
         $query = "SELECT COUNT(*) AS CountSize FROM $player WHERE boat = :boatId";
         $req = $sql->db->prepare($query);
         $req->execute(['boatId' => $boatId]);
         $CountSize = $req->fetch()['CountSize'];
 
+        /*Si la valeur de $CountSize est inferieur au bateau alors ce bateau est 
+        ajouté à la case
+        */
         if ($CountSize < $boats[$boatId]['size']) {
             $query = "UPDATE $player SET boat = :boat WHERE idgrid = :position";
             $req = $sql->db->prepare($query);
@@ -63,6 +66,8 @@ require_once __DIR__ . '/../scripts/sqlConnect.php';
         $req->execute(['id'=>$id]);
         $count = $req->fetch()['count'];
 
+        /*Count compte chque bateau placé entièrement puis s'ils sont tous placés
+        alors le bouton Jouer apparait */
         if ($count != $boat['size']) {
             $_SESSION['allPlaced'] = true;
             break;
